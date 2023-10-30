@@ -1,0 +1,450 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: white;
+  font-family: Roboto, Geneva, Tahoma, sans-serif;
+}
+
+.tarjeta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 3px 3px 10px gray;
+  height: 320px;
+  border-color: grey 1px solid;
+  width: 260px;
+}
+.tarjeta .foto-auto {
+  width: 220px;
+}
+.tarjeta .texto-nombre-articulo {
+  font-size: 15px;
+  color: black;
+}
+.tarjeta .texto-y-boton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tarjeta .boton-ver-mas {
+  color: white;
+  width: 80px;
+  height: 30px;
+  border-radius: 1px;
+  background-color: rgb(51, 58, 145);
+  cursor: pointer;
+}
+.tarjeta .boton-ver-mas:hover {
+  background-color: rgb(0, 87, 156);
+  transform: scale(1.1);
+}
+
+.icono-hamburguesa {
+  cursor: pointer;
+}
+
+.icono-hamburguesa:hover {
+  transform: scale(1.2);
+}
+
+.template-container {
+  color: white;
+  background-color: gray;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: "menu" "header" "main" "aside" "footer";
+}
+.template-container menu {
+  height: 10vh;
+  grid-area: menu;
+  background-color: rgb(0, 87, 156);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.template-container menu .menu-de-texto {
+  display: none;
+}
+.template-container menu .icono-hamburguesa {
+  color: white;
+}
+.template-container menu .icono-auto {
+  color: white;
+  padding-right: 10px;
+}
+.template-container menu .menu-seccion1 {
+  display: flex;
+  justify-content: end;
+}
+.template-container header {
+  height: 10vh;
+  grid-area: header;
+  background-color: rgb(226, 226, 226);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.template-container header .texto-ordenar {
+  color: black;
+}
+.template-container header .combo {
+  cursor: pointer;
+}
+.template-container main {
+  height: 60vh;
+  grid-area: main;
+  background-color: whitesmoke;
+  overflow-y: hidden;
+}
+.template-container main .grid-container-autos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.template-container main .foto-auto:hover {
+  transform: scale(1.1);
+}
+.template-container aside {
+  height: 10vh;
+  grid-area: aside;
+  background-color: rgb(226, 226, 226);
+}
+.template-container aside .aside-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(78, 121, 240);
+  box-sizing: content-box;
+  height: 100%;
+}
+.template-container aside .paginacion {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+.template-container aside .item-pag {
+  cursor: pointer;
+  width: 15px;
+  margin-left: 5px;
+}
+.template-container aside .item-pag:hover {
+  transform: scale(1.2);
+}
+.template-container footer {
+  height: 10vh;
+  grid-area: footer;
+  background-color: rgb(1, 47, 107);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.template-container footer .footer-iconos {
+  display: flex;
+  align-items: center;
+}
+.template-container footer .footer-iconos .iconos-footer {
+  margin: 5px;
+  cursor: pointer;
+}
+.template-container footer .footer-iconos .iconos-footer:hover {
+  color: yellow;
+  transform: scale(1.4);
+}
+.template-container footer .texto-footer-tablet {
+  display: none;
+}
+.template-container footer .texto-footer-otros {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media ((min-width: 577px) and (max-width: 992px)) {
+  .template-container {
+    color: white;
+    display: grid;
+    grid-template-columns: 1.3fr 4.7fr;
+    grid-template-areas: "menu menu" "header main" "header aside" "footer footer";
+  }
+  .template-container menu {
+    height: 10vh;
+    grid-area: menu;
+    background-color: rgb(0, 87, 156);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .template-container menu .icono-hamburguesa {
+    display: none;
+  }
+  .template-container menu .icono-auto {
+    color: white;
+    padding-right: 10px;
+  }
+  .template-container menu .menu-seccion1 {
+    padding-left: 15px;
+    display: flex;
+    justify-content: end;
+  }
+  .template-container menu .menu-de-texto {
+    box-sizing: content-box;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 0px;
+  }
+  .template-container menu .opciones-menu-de-texto {
+    list-style: none;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+  }
+  .template-container menu .item-menu-texto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 70px;
+    height: 40px;
+    cursor: pointer;
+  }
+  .template-container menu .item-menu-texto:hover {
+    color: rgb(1, 47, 107);
+    background-color: rgb(209, 209, 209);
+  }
+  .template-container header {
+    height: 80vh;
+    grid-area: header;
+    background-color: rgb(226, 226, 226);
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  .template-container header .texto-ordenar {
+    color: black;
+  }
+  .template-container header .contenedor-header {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .template-container header .contenedor-header .combo {
+    box-sizing: content-box;
+    width: 100%;
+    font-size: medium;
+  }
+  .template-container main {
+    height: 70vh;
+    grid-area: main;
+    background-color: whitesmoke;
+  }
+  .template-container main .grid-container-autos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .template-container aside {
+    height: 10vh;
+    grid-area: aside;
+  }
+  .template-container aside .aside-container {
+    box-sizing: content-box;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(78, 121, 240);
+  }
+  .template-container aside .paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-color: black solid 1px;
+    list-style: none;
+  }
+  .template-container footer {
+    height: 10vh;
+    grid-area: footer;
+    background-color: rgb(1, 47, 107);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .template-container footer .footer-iconos {
+    display: flex;
+    align-items: center;
+  }
+  .template-container footer .footer-iconos .iconos-footer {
+    margin: 5px;
+  }
+  .template-container footer .parrafo-footer {
+    border: 1px gray solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+  .template-container footer .texto-footer-tablet {
+    display: block;
+  }
+  .template-container footer .texto-footer-otros {
+    display: none;
+  }
+}
+@media ((min-width: 993px) and (max-width: 5000px)) {
+  .template-container {
+    color: white;
+    background-color: rgb(167, 21, 21);
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+    grid-template-areas: "menu header" "menu main" "footer aside";
+  }
+  .template-container menu {
+    height: 90vh;
+    grid-area: menu;
+    background-color: rgb(0, 87, 156);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+  .template-container menu .icono-hamburguesa {
+    display: none;
+  }
+  .template-container menu .icono-auto {
+    color: white;
+    padding-right: 10px;
+  }
+  .template-container menu .menu-seccion1 {
+    display: flex;
+    justify-content: end;
+    margin-top: 20px;
+  }
+  .template-container menu .menu-de-texto {
+    box-sizing: content-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    margin-top: 30px;
+    height: 200px;
+  }
+  .template-container menu .opciones-menu-de-texto {
+    box-sizing: content-box;
+    width: 100%;
+    list-style: none;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .template-container menu .item-menu-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: content-box;
+    width: 100%;
+    height: 40px;
+    cursor: pointer;
+  }
+  .template-container menu .item-menu-texto:hover {
+    color: rgb(1, 47, 107);
+    background-color: rgb(209, 209, 209);
+  }
+  .template-container header {
+    height: 10vh;
+    grid-area: header;
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .template-container header .texto-ordenar {
+    color: black;
+  }
+  .template-container header .contenedor-header {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .template-container header .contenedor-header .combo {
+    box-sizing: content-box;
+    width: 100%;
+    font-size: large;
+  }
+  .template-container main {
+    height: 80vh;
+    grid-area: main;
+    background-color: whitesmoke;
+  }
+  .template-container main .grid-container-autos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .template-container aside {
+    height: 10vh;
+    grid-area: aside;
+  }
+  .template-container aside .aside-container {
+    box-sizing: content-box;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: rgb(78, 121, 240);
+  }
+  .template-container aside .paginacion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-color: black solid 1px;
+    list-style: none;
+  }
+  .template-container footer {
+    height: 10vh;
+    grid-area: footer;
+    background-color: rgb(1, 47, 107);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .template-container footer .footer-iconos {
+    display: flex;
+    align-items: center;
+  }
+  .template-container footer .footer-iconos .iconos-footer {
+    margin: 5px;
+  }
+  .template-container footer .texto-footer-tablet {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */
